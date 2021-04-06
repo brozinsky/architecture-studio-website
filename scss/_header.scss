@@ -1,0 +1,339 @@
+body {
+    height: 0;
+}
+
+.header {
+    position: relative;
+    z-index: -99;
+    height: 100vh;
+
+    &__social {
+        width: 22px;
+        height: 225px;
+        position: absolute;
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: column;
+        top: 2rem;
+        right: -5rem;
+        z-index: -5;
+
+        &-li {
+            display: none;
+            color: #ccc;
+            opacity: 0.5;
+            font-size: 30px;
+            padding-right: 10px;
+
+
+        @include mq(small) {
+            display: inline-block;
+        }
+
+            &:hover {
+                cursor: pointer;
+                opacity: 1;
+                color: #fff;
+            }
+        }
+    }
+
+    &__plus-top {
+        position: absolute;
+        z-index: 2;
+        left: -25px;
+        bottom: -25px;
+        width: 5rem;
+        display: none;
+
+        @include mq(medium) {
+            display: block;
+        }
+    }
+
+    &__plus-bottom {
+        color: #fff;
+        position: absolute;
+        z-index: 2;
+        right: -25px;
+        top: -25px;
+        width: 5rem;
+        display: none;
+
+        @include mq(medium) {
+            display: block;
+        }
+    }
+
+    &__frame {
+        position: relative;
+        margin: 0 auto 12vh auto;
+        width: 100vw;
+        height: 80vh;
+        display: grid;
+        grid-template-columns: 35% 65%;
+        grid-template-rows: 33% 33% 33%;
+
+        @include mq(small) {
+            grid-template-columns: 50% 50%;
+        }
+
+        @include mq(medium) {
+            margin: 10vh auto;
+            width: 80vw;
+            border: #fff 2px dashed;
+        }
+
+        @include mq(xlarge) {
+            width: 1300px;
+        }
+
+        &::after {
+            position: absolute;
+            top: -9rem;
+            left: -20rem;
+            width: 35rem;
+            height: 65rem;
+            background-image: url('../img/white-diagonal.png');
+            background-size: 55rem;
+            z-index: -4;
+
+            @include mq(medium) {
+                content: "";
+            }
+        }
+
+        &::before {
+            position: absolute;
+            bottom: -9rem;
+            right: -15rem;
+            width: 35rem;
+            height: 65rem;
+            background-image: url('../img/white-diagonal.png');
+            background-size: 55rem;
+            z-index: -4;
+
+            @include mq(medium) {
+                content: "";
+            }
+        }
+
+        &-bcg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            z-index: -1;
+
+            @include mq(medium) {
+                background: $main-color-lighter;
+            }
+
+            &::after {
+                position: absolute;
+                top: 12%;
+                left: 7%;
+                background-color: $main-color-shaded;
+                width: 23%;
+                height: 5%;
+                opacity: .7;
+                @include mq(medium) {
+                    content: "";
+                }
+            }
+        }
+    }
+
+    &__title-big {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        // transform: translateX(-200%);
+        margin: 20rem 5rem;
+        font-size: 4rem;
+        line-height: 5.5rem;
+        text-transform: uppercase;
+        font-style: normal;
+        width: 359px;
+
+        letter-spacing: 4px;
+
+        @include mq(medium) {
+            margin: auto 6rem;
+            font-size: 5rem;
+            padding-right: 15rem;
+            border-top: solid 1px #fff;
+        }
+
+        @include mq(xlarge) {
+            margin: auto 12rem;
+            line-height: 8.5rem;
+            font-size: 7.2rem;
+            padding-right: 35rem;
+        }
+    }
+
+    &__title-small {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        margin: 15rem 5rem;
+        font-size: 2.2rem;
+        border-bottom: solid 1px #fff;
+        padding-right: 15rem;
+        width: 23rem;
+        letter-spacing: 0.2rem;
+
+        @include mq(small) {
+            margin: auto 1rem;
+        }
+
+        @include mq(medium) {
+            margin: auto 6rem;
+            font-size: 2.4rem;
+        }
+
+        @include mq(xlarge) {
+            margin: auto 12rem;
+            line-height: 5.2rem;
+            font-size: 3.6rem;
+            width: 34rem;
+        }
+    }
+
+    &__span {
+        display: inline-block;
+        transform: skew(-20deg);
+
+        @include mq(xlarge) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__button {
+        grid-column-start: 1;
+        // grid-column-end: 1;
+        // grid-row-start: 4;
+        padding: 1rem;
+        margin: 5rem 5rem;
+        color: #fff;
+        background: $main-color;
+        border: 2px solid #FFFFFF;
+        // height: 3.6rem;
+        width: 100px;
+        line-height: 3.6rem;
+        z-index: 3;
+        transform: skew(20deg);
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+        outline: 1px solid;
+        outline-color: rgba(255, 255, 255, .5);
+        outline-offset: -2px;
+        transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+        @include mq(small) {
+            margin: 5rem auto;
+            line-height: 3.6rem;
+            width: 14rem;
+            grid-column-start: 1;
+            grid-row-start: 4;
+        }
+
+        @include mq(medium) {
+            grid-row-start: 3;
+            width: 16rem;
+            line-height: 4rem;
+            height: 4rem;
+        }
+
+        @include mq(large) {
+            width: 26rem;
+            line-height: 5rem;
+            height: 5rem;
+        }
+
+        @include mq(xlarge) {
+            width: 32rem;
+            line-height: 6rem;
+            height: 6rem;
+            margin: auto 12rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border: 2px solid $main-color;
+            color: $main-color;
+            background: #FFFFFF;
+            outline-color: rgba(255, 255, 255, 0);
+            outline-offset: 15px;
+        }
+    }
+
+    &__icon {
+        opacity: 0;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translate(0, -50%);
+        font-size: 25px;
+        line-height: 40px;
+
+        @include mq(small) {
+            opacity: 1;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10rem;
+        margin: 2.4rem 2.4rem auto auto;
+        border: 1px #fff dashed;
+        padding: 2rem 3rem 0 4rem;
+        border-radius: 0 0 0 8rem;
+
+        @include mq(small) {
+            grid-column-start: 2;
+            height: 16rem;
+        }
+    }
+
+    &__img {
+        grid-column-start: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        margin: auto;
+        width: 25rem;
+
+        @include mq(small) {
+            display: inline;
+            grid-row-start: 2;
+            width: 35rem;
+        }
+
+        @include mq(medium) {
+            width: 35rem;
+        }
+
+        @include mq(large) {
+            width: 45rem;
+        }
+
+        @include mq(xlarge) {
+            width: 64rem;
+        }
+    }
+}
+
+.scroll {
+    height: 10rem;
+    position: absolute;
+    bottom: -10vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-bottom: 1em;
+    width: 40px;
+
+    @include mq(small) {
+        bottom: 0;
+    }
+}

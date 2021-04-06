@@ -1,0 +1,29 @@
+$base-font-size: 16px;
+$small-font-size: 14px;
+
+$main-spacing: 20px;
+$max-width: 1000px;
+
+$main-color: rgb(2, 110, 172);
+$main-color-shaded: #004E7A;
+$main-color-lighter: #026EAC;
+$pin-color: #CF2428;
+
+$breakpoints: (small: (min-width: 576px),
+  medium: (min-width: 768px),
+  large: (min-width: 1200px),
+  xlarge: (min-width: 1620px));
+
+@mixin mq($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+
+  @if($size) {
+    @media #{$size} {
+      @content;
+    }
+  }
+
+  @else {
+    @error '"#{$breakpoint}" - error'
+  }
+}

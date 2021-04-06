@@ -1,0 +1,169 @@
+.grid {
+    display: grid;
+    grid-auto-flow: column;
+    width: auto;
+    grid-template-columns: 100%;
+    row-gap: 1.5em;
+
+    @include mq(medium) {
+        grid-template-columns: 50% 50%;
+        row-gap: 2em;
+    }
+
+    @include mq(large) {
+        grid-template-columns: 33% 33% 33%;
+        column-gap: 1em;
+        row-gap: 3em;
+    }
+
+    &__item {
+        box-sizing: border-box;
+        border: solid 1px #fff;
+        padding: 5px;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.4s;
+        width: 90%;
+        margin: 0 auto;
+
+        &--1 {
+            grid-row-start: 1;
+        }
+
+        &--2 {
+            grid-row-start: 2;
+        }
+
+        &--3 {
+            grid-row-start: 3;
+
+            @include mq(medium) {
+                grid-column-start: 2;
+                grid-row-end: 3;
+                grid-row-start: 1;
+            }
+
+            @include mq(large) {
+                grid-row-end: 3;
+                grid-column-start: 3;
+                grid-column-end: 4;
+            }
+        }
+
+        &--4 {
+            grid-row-start: 4;
+
+            @include mq(large) {
+                grid-row-start: 1;
+                grid-column-start: 2;
+            }
+        }
+
+        &--5 {
+            grid-row-start: 5;
+
+            @include mq(medium) {
+                grid-column-start: 2;
+                grid-row-start: 4;
+
+            }
+
+            @include mq(large) {
+                grid-row-start: 2;
+                grid-column-start: 2;
+            }
+        }
+
+        &--6 {
+            grid-row-start: 6;
+
+            @include mq(large) {
+                grid-row-start: 3;
+            }
+
+            @include mq(medium) {
+                grid-column-start: 2;
+                grid-row-start: 3;
+            }
+        }
+
+        &--7 {
+            grid-row-start: 7;
+            height: 212px;
+
+            @include mq(medium) {
+                grid-column-start: 1;
+                grid-row-start: 3;
+            }
+
+            @include mq(large) {
+                grid-row-start: 3;
+                grid-column-start: 1;
+            }
+        }
+
+        &--8 {
+            grid-row-start: 8;
+
+            @include mq(large) {
+                grid-row-start: 3;
+                grid-column-start: 3;
+            }
+        }
+    }
+}
+
+
+
+.projects {
+    background: url('../img/projects-bcg-70.png');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+
+    &__wrap {
+        position: relative;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        position: relative;
+        margin: 3em auto 2em auto;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 40%;
+            left: -1em;
+            background-color: $main-color-shaded;
+            width: 8em;
+            height: 30px;
+            opacity: .8;
+            z-index: -1;
+        }
+    }
+
+    &__bcg {
+        position: absolute;
+        bottom: -150px;
+        left: 300px;
+        z-index: -1;
+    }
+
+    &__span {
+        display: inline-block;
+        transform: skew(-20deg);
+    }
+
+    &__button {
+        z-index: 99;
+        transform: skew(20deg);
+        color: $main-color;
+        background: #FFFFFF;
+        border: 1px solid $main-color-shaded;
+        width: 165px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 3rem;
+        cursor: pointer;
+    }
+}

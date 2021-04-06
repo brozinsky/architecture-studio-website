@@ -1,0 +1,90 @@
+.menu {
+    box-sizing: border-box;
+    z-index: 5;
+    width: 100vw;
+    position: fixed;
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%, 0);
+    background-size: 25rem;
+    box-sizing: border-box;
+    display: none;
+    font-size: 2em;
+    margin-top: 1rem;
+    transition: 0.2s;
+
+    &--transparent {
+        border: 1px solid #fff;
+        height: 7rem;
+        background-image: url('../img/lines-menu.png');
+        background-size: 60%;
+    }
+
+    &--solid {
+        height: 40px;
+    }
+
+    @include mq(medium) {
+        display: block;
+    }
+
+    &__bcg {
+        position: fixed;
+        width: 1047px;
+        display: flex;
+        justify-content: flex-end;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 0.5rem 0;
+        transition: 0.2s;
+
+        @include mq(medium) {
+            width: 80vw;
+        }
+
+        @include mq(xlarge) {
+            width: 1300px;
+        }
+
+        &--transparent {
+            background-color: #026EAC;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            height: 40px;
+            padding: 0.8rem 0;
+        }
+
+        &--solid {
+            height: 40px;
+        }
+    }
+
+    &__nav-btn {
+        box-sizing: border-box;
+        color: #fff;
+        line-height: 40px;
+        text-decoration: none;
+        padding: 0 5%;
+        padding-right: 5%;
+        letter-spacing: 0.3rem;
+
+        &:hover {
+            background-color: #fff;
+            color: $main-color;
+            border-radius: 0 0 5rem 1rem;
+        }
+    }
+}
+
+.menu-home {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 3.2rem;
+    transform: translate(0, 10%);
+
+    &:hover {
+        background-color: #fff;
+        color: $main-color;
+        border-radius: 0 0 5rem 1rem;
+    }
+}

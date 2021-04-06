@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import 'variables';
+
+* {
+    font-weight: normal;
+    font-family: 'Poppins',
+        Arial,
+        Helvetica,
+        sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: $main-color;
+    color: #fff;
+    overflow-x: hidden;
+
+    background-blend-mode: multiply, normal;
+    background-image: url("../img/paper_bcg_60.png"), url('../svg/graph-paper25.svg');
+    background-size: 230vh, 100px;
+}
+
+@import 'typography';
+@import 'layout';
+@import 'header';
+@import 'about';
+@import 'menu';
+@import 'projects';
+@import 'footer';

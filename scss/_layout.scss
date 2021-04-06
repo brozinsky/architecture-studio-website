@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.section__wrap{
+    margin: 12vh auto 0 auto;
+    width: 80vw;
+
+    @include mq(medium) {
+        margin: 10vh auto 0 auto;
+        width: 80vw;
+    }
+
+    @include mq(xlarge) {
+        width: 1300px;
+    }
+}
+.about {
+    order: 1;
+}
+.projects {
+    order: 3;
+}
+
+.contact {
+    order: 4;
+}
+
+.enquiry {
+    order: 5;
+}
+
+.footer {
+    order: 6;
+}
