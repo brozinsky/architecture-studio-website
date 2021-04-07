@@ -47,3 +47,129 @@ gsap.fromTo(headerSocial, 2, {
     rotation: 360,
     transformOrigin: "center",
 });
+
+// ABOUT
+
+const sections = document.querySelectorAll('section')
+const features = document.querySelector('.features')
+
+const aboutSection = document.getElementById('about')
+const aboutTitleBefore = document.querySelector('.about__info-title:before')
+const features2 = document.querySelector('.features__2')
+const features3 = document.querySelector('.features__3')
+
+
+const aboutTl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+sections.forEach(section => {
+    gsap.fromTo(section.children, { y: '+=100', opacity: 0 },
+        {
+            y: 0, opacity: 1, stagger: 0.2, duration: 0.8,
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 65%',
+                ease: 'power3. out'
+            }
+        })
+})
+
+const featuresCollection = features.children;
+
+for (let feature of featuresCollection) {
+    console.log(feature)
+    gsap.fromTo(feature, { x: '+=100', opacity: 0 },
+        {
+            x: 0, opacity: 1, stagger: 0.2, duration: 0.8,
+            scrollTrigger: {
+                trigger: feature,
+                start: 'top 75%',
+                markers: true,
+                ease: 'power3. out'
+            }
+        })
+}
+
+// PROJECTS
+const projectsImages = document.querySelector('.grid')
+
+const images = projectsImages.children;
+
+const imgTl = gsap.timeline({
+    defaults: {
+        delay: 0.3, opacity: 0, duration: 0.15, y: 80,
+    },
+    scrollTrigger: {
+        trigger: projectsImages,
+        start: 'top 55%',
+        ease: "none",
+    }
+})
+    .from(images[0], {
+    }, "-=0.2")
+    .from(images[3], {
+    }, "-=0.3")
+    .from(images[4], {
+    }, "-=0.5")
+    .from(images[2], {
+    }, "-=0.2")
+    .from(images[1], {
+    }, "-=0.5")
+    .from(images[5], {
+    }, "-=0.3")
+    .from(images[6], {
+    }, "-=0.2")
+    .from(images[7], {
+    }, "-=0.4")
+
+// MAP
+const mapPin = document.querySelector('.map__pin')
+const map = document.querySelector('.map')
+const mapContainer = document.querySelector('.map__container')
+
+// pin drop
+gsap.set('.map__pin', {
+    transformOrigin: "center 100%",
+});
+gsap.from(mapPin, 2.5, {
+    scrollTrigger: {
+        trigger: map,
+        start: 'top 55%',
+    },
+    y: '-30rem',
+    ease: "bounce.out",
+});
+gsap.from(mapContainer, 1.5, {
+    scrollTrigger: {
+        trigger: map,
+        start: 'top 55%',
+    },
+    opacity: 0,
+    ease: "none",
+});
+
+// pin wiggle
+const wiggleTl1 = gsap.timeline({
+    delay: 3,
+    repeat: -1,
+    repeatDelay: 1
+})
+    .to(mapPin, 0.5, {
+        rotation: 20
+    })
+    .to(mapPin, 5, {
+        rotation: 0,
+        ease: Elastic.easeOut.config(0.9, 0.1)
+    });
+
+const wiggleTl2 = gsap.timeline({
+    delay: 3,
+    repeat: -1,
+    repeatDelay: 1
+})
+    .to(mapContainer, 0.5, {
+        x: '1em'
+    })
+    .to(mapContainer, 5, {
+        x: 0,
+        ease: Elastic.easeOut.config(0.9, 0.1)
+    });
