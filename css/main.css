@@ -755,7 +755,6 @@ body {
           transform: translate(-50%, 0);
   background-size: 25rem;
   box-sizing: border-box;
-  display: none;
   font-size: 2em;
   margin-top: 1rem;
   -webkit-transition: 0.2s;
@@ -779,16 +778,35 @@ body {
   }
 }
 
+.menu__container {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.menu__container li {
+  list-style: none;
+}
+
 .menu__bcg {
   position: fixed;
-  width: 1047px;
+  width: 100vw;
+  height: 100vh;
+  background: #026eac;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  left: 50%;
+  left: -100vw;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   padding: 0.5rem 0;
@@ -806,6 +824,10 @@ body {
   .menu__bcg {
     width: 1300px;
   }
+}
+
+.menu__bcg--open {
+  left: 50%;
 }
 
 .menu__bcg--transparent {
@@ -829,6 +851,13 @@ body {
   padding: 0 5%;
   padding-right: 5%;
   letter-spacing: 0.3rem;
+  font-size: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .menu__nav-btn {
+    font-size: 2rem;
+  }
 }
 
 .menu__nav-btn:hover {
@@ -850,6 +879,83 @@ body {
   background-color: #fff;
   color: #026eac;
   border-radius: 0 0 5rem 1rem;
+}
+
+.burger {
+  position: absolute;
+  right: -4px;
+  top: -2px;
+  width: 30px;
+  -webkit-transform: translate(-25px, 30px);
+          transform: translate(-25px, 30px);
+  height: 3px;
+  background: #fff;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  z-index: 100;
+  opacity: 85%;
+}
+
+.burger--active .burger::before {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 0;
+}
+
+.burger--active .burger::after {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 0;
+}
+
+.burger-menu {
+  position: fixed;
+  right: 5%;
+  top: 2%;
+  display: block;
+  height: 6rem;
+  width: 6rem;
+  border: solid 2px #026eac;
+  border-radius: 50%;
+  background-color: #026eac;
+  opacity: 85%;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+@media (min-width: 768px) {
+  .burger-menu {
+    display: none;
+  }
+}
+
+.burger:before, .burger:after {
+  position: absolute;
+  background: #fff;
+  content: '';
+  width: 30px;
+  height: 3px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.burger:before {
+  top: -12px;
+}
+
+.burger:after {
+  top: 12px;
+}
+
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
 }
 
 .grid {

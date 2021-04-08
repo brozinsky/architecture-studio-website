@@ -1,3 +1,7 @@
+
+
+//Animations
+
 const headerFrame = document.querySelector('.header__frame')
 const headerTitle = document.querySelector('.header__title-big')
 const headerLogo = document.querySelector('.header__logo')
@@ -83,7 +87,6 @@ for (let feature of featuresCollection) {
             scrollTrigger: {
                 trigger: feature,
                 start: 'top 75%',
-                markers: true,
                 ease: 'power3. out'
             }
         })
@@ -173,3 +176,20 @@ const wiggleTl2 = gsap.timeline({
         x: 0,
         ease: Elastic.easeOut.config(0.9, 0.1)
     });
+
+//Burger
+const menu = document.querySelector('.menu__bcg');
+const burger = document.querySelector('.burger-menu');
+const links = document.querySelectorAll('.menu__nav-btn');
+
+burger.addEventListener("click", () => {
+    menu.classList.toggle("menu__bcg--open");
+    burger.classList.toggle('burger--active');
+});
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.toggle("menu__bcg--open");
+        burger.classList.toggle('burger--active');
+    });
+});
