@@ -148,22 +148,4 @@
         left: 300px;
         z-index: -1;
     }
-
-    &__span {
-        display: inline-block;
-        transform: skew(-20deg);
-    }
-
-    &__button {
-        z-index: 99;
-        transform: skew(20deg);
-        color: $main-color;
-        background: #FFFFFF;
-        border: 1px solid $main-color-shaded;
-        width: 165px;
-        height: 40px;
-        line-height: 40px;
-        margin-top: 3rem;
-        cursor: pointer;
-    }
 }
