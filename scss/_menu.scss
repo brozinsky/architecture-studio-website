@@ -121,18 +121,23 @@
 
 .burger {
     position: absolute;
-    right: -4px;
-    top: -2px;
+    right: 0;
+    top: 0;
     width: 30px;
-    transform: translate(-25px, 30px);
+    transform: translate(-9px, 23px);
     height: 3px;
-    background: #fff;
+    background: $main-color;
     transition: all .2s ease-in-out;
     z-index: 100;
     opacity: 85%;
 
 
     &--active{
+
+        & .burger {
+            height: 0px;
+        }
+
         & .burger::before {
             transform-origin: center;
             transform: rotate(-45deg);
@@ -154,11 +159,9 @@
         display: block;
         height: 6rem;
         width: 6rem;
-        border: solid 2px $main-color;
+        border: solid 2px #fff;
         border-radius: 50%;
-        background-color: $main-color;
-        opacity: 85%;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        background-color: #fff;
         z-index: 99;
 
         @include mq(medium) {
@@ -170,7 +173,7 @@
     &:before,
     &:after {
         position: absolute;
-        background: #fff;
+        background: $main-color;
         content: '';
         width: 30px;
         height: 3px;
