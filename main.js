@@ -80,7 +80,6 @@ sections.forEach(section => {
 const featuresCollection = features.children;
 
 for (let feature of featuresCollection) {
-    console.log(feature)
     gsap.fromTo(feature, { x: '+=100', opacity: 0 },
         {
             x: 0, opacity: 1, stagger: 0.2, duration: 0.8,
@@ -193,3 +192,16 @@ links.forEach(link => {
         burger.classList.toggle('burger--active');
     });
 });
+
+// nav bar scroll
+window.onscroll = function () {
+    "use strict";
+    if (document.documentElement.scrollTop >= 200) {
+        menu.classList.add("menu__bcg--color");
+        menu.classList.remove("menu__bcg--transparent");
+    }
+    else {
+        menu.classList.remove("menu__bcg--color");
+        menu.classList.add("menu__bcg--transparent");
+    }
+};
