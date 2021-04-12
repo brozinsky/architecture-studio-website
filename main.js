@@ -78,18 +78,23 @@ sections.forEach(section => {
 })
 
 const featuresCollection = features.children;
+var mediaQuery = window.matchMedia('(min-width: 768px)');
 
-for (let feature of featuresCollection) {
-    gsap.fromTo(feature, { x: '+=100', opacity: 0 },
-        {
-            x: 0, opacity: 1, stagger: 0.2, duration: 0.8,
-            scrollTrigger: {
-                trigger: feature,
-                start: 'top 75%',
-                ease: 'power3. out'
-            }
-        })
+if (mediaQuery) {
+    for (let feature of featuresCollection) {
+        gsap.fromTo(feature, { x: '+=100', opacity: 0 },
+            {
+                x: 0, opacity: 1, stagger: 0.2, duration: 0.8,
+                scrollTrigger: {
+                    trigger: feature,
+                    start: 'top 75%',
+                    ease: 'power3. out'
+                }
+            })
+    }
 }
+
+
 
 // PROJECTS
 const projectsImages = document.querySelector('.grid')
