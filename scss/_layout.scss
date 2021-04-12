@@ -1,20 +1,14 @@
-body{
-    display: flex;
-    flex-direction: column;
-}
-
-
 .section__wrap{
-    margin: 12vh auto 0 auto;
+    margin: 5rem auto 0 auto;
     width: 80vw;
 
     @include mq(medium) {
-        margin: 10vh auto 0 auto;
+        margin: 10rem auto 0 auto;
         width: 80vw;
     }
 
     @include mq(xlarge) {
-        width: 1300px;
+        max-width: 1300px;
     }
 }
 .about {

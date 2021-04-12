@@ -14,11 +14,18 @@
 html {
     background: $main-color;
     color: #fff;
-    overflow-x: hidden;
-
     background-blend-mode: multiply, normal;
     background-image: url("../img/paper_bcg_60.png"), url('../svg/graph-paper25.svg');
     background-size: 230vh, 100px;
+    width: 100vw;
+    max-width: 100%
+}
+
+body{
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%
 }
 
 @import 'typography';

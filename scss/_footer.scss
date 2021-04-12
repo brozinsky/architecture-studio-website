@@ -1,8 +1,8 @@
 .contact {
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    display: grid;
+    align-items: center;
+    justify-content: space-between;
     width: auto;
     grid-template-columns: 100%;
     grid-template-rows: 25% 25% 25% 25%;
@@ -11,18 +11,12 @@
     width: 80vw;
 
     @include mq(medium) {
-        margin: 10vh auto 0 auto;
-        width: 80vw;
-    }
-
-    @include mq(xlarge) {
-        width: 1300px;
-    }
-
-    @include mq(small) {
+        display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 50% 50%;
 
+        margin: 10vh auto 0 auto;
+        width: 80vw;
     }
 
     @include mq(large) {
@@ -31,6 +25,12 @@
         column-gap: 1em;
         row-gap: 3em;
     }
+
+    @include mq(xlarge) {
+        width: 1300px;
+    }
+
+
 
 
 
@@ -142,6 +142,7 @@
     padding-bottom: 40px;
     margin: 0 auto;
     margin-bottom: 100px;
+    margin-top: 2rem;
     background-color: $main-color;
     max-width: 50em;
     font-size: 1.6rem;
@@ -288,6 +289,7 @@
     @include mq(small) {
         width: 100%;
         height: 170px;
+        max-width: 40rem;
     }
 
     @include mq(large) {
@@ -343,7 +345,7 @@
         @include mq(small) {
             left: 50%;
             transform: translate(-50%);
-            bottom: 6rem;
+            // bottom: 6rem;
         }
 
         &-li {
