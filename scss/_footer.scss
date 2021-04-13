@@ -10,29 +10,17 @@
     margin: 5rem auto 0 auto;
     width: 80vw;
 
-    @include mq(medium) {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 50% 50%;
-
-        margin: 10vh auto 0 auto;
-        width: 80vw;
-    }
-
     @include mq(large) {
+        // display: grid;
         grid-template-columns: 20% 60% 20%;
-        grid-template-rows: 100%;
+        grid-template-rows: 50% 50%;
         column-gap: 1em;
         row-gap: 3em;
     }
 
     @include mq(xlarge) {
-        width: 1300px;
+        max-width: 1300px;
     }
-
-
-
-
 
     &__title {
         margin: 1em 0;
@@ -83,6 +71,17 @@
         grid-column-end: 3;
         grid-row-start: 1;
 
+    }
+
+    &__wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        @include mq(large) {
+            flex-direction: row;
+        }
     }
 
     &__img {
@@ -139,21 +138,15 @@
 .enquiry {
     border: 1px #fff solid;
     padding: 4rem;
-    padding-bottom: 40px;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 2rem;
     margin-top: 2rem;
     background-color: $main-color;
     max-width: 50em;
     font-size: 1.6rem;
 
-    @include mq(small) {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 3;
-    }
-
     @include mq(large) {
+        padding-bottom: 40px;
         grid-column-start: 2;
         grid-row-start: 2;
     }
@@ -275,7 +268,6 @@
 }
 
 .address {
-    // height: 170px;
     width: 60%;
     color: $main-color-shaded;
     background-color: #fff;
@@ -288,12 +280,7 @@
 
     @include mq(small) {
         width: 100%;
-        height: 170px;
         max-width: 40rem;
-    }
-
-    @include mq(large) {
-        width: 100%;
     }
 
     &__studio-address {
@@ -327,7 +314,8 @@
     width: 100vw;
     height: 16rem;
     z-index: -2;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 
     &__follow {
         display: inline-block;
@@ -338,15 +326,9 @@
 
     &__social {
         width: 250px;
-        position: absolute;
+        margin: 0 auto;
         bottom: 1rem;
         left: 3rem;
-
-        @include mq(small) {
-            left: 50%;
-            transform: translate(-50%);
-            // bottom: 6rem;
-        }
 
         &-li {
             display: inline-block;
@@ -370,6 +352,6 @@
     width: 100vw;
     text-align: center;
     font-size: 1.6rem;
-    position: absolute;
+    // position: absolute;
     bottom: 2.2rem;
 }

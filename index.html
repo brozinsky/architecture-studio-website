@@ -54,7 +54,7 @@
                 </ul>
             </div>
         </div>
-        <a href="#about"> <img src="./svg/arrow-down.svg" alt="Arrow down" class="scroll"></a>
+        <a class="scroll__area" href="#about"> <img src="./svg/arrow-down.svg" alt="Arrow down" class="scroll"></a>
     </header>
     <section id='about' class="about">
         <div class="section__wrap">
@@ -140,23 +140,26 @@
             <h2 class="contact__title">Contact</h2>
             <p class="contact__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, fuga!</p>
         </div>
-        <div class="map">
-            <img src="./svg/map-marker.svg" alt="Pin location" class="map__pin">
-            <img src="./img/location.png" alt="City map" class="map__img">
-            <div class="map__container">
-                <span class="map__info">Our location</span>
+        <div class="map__wrap">
+            <div class="map">
+                <img src="./svg/map-marker.svg" alt="Pin location" class="map__pin">
+                <img src="./img/location.png" alt="City map" class="map__img">
+                <div class="map__container">
+                    <span class="map__info">Our location</span>
+                </div>
+            </div>
+            <div class="address">
+                <h3 class="address__title">Office address</h3>
+                <ul class="address__studio-address">
+                    <li class="address__pin"><i class="fas fa-map-marker-alt"></i> 21 Lorem Street</li>
+                    <li class="address__pin">&nbsp &nbsp Ipsum Beach 13157</li>
+                    <li class="address__tel"><i class="fas fa-phone-alt"></i> 1-800-123-4567
+                    </li>
+                    <li class="address__mail"><i class="far fa-envelope"></i> info@dummy.com</li>
+                </ul>
             </div>
         </div>
-        <div class="address">
-            <h3 class="address__title">Office address</h3>
-            <ul class="address__studio-address">
-                <li class="address__pin"><i class="fas fa-map-marker-alt"></i> 21 Lorem Street</li>
-                <li class="address__pin">&nbsp &nbsp Ipsum Beach 13157</li>
-                <li class="address__tel"><i class="fas fa-phone-alt"></i> 1-800-123-4567
-                </li>
-                <li class="address__mail"><i class="far fa-envelope"></i> info@dummy.com</li>
-            </ul>
-        </div>
+
         <div class="enquiry">
             <h4 class="enquiry__title">Enquiry form</h4>
             <form class="enquiry__form" action="https://formspree.io/f/xknprbay" method="POST">
@@ -170,7 +173,7 @@
                 </div>
                 <div class="enquiry__container-message">
                     <label for="message" class="enquiry__label">Your enquiry</label>
-                    <textarea name="message" id="message" cols="10" rows="10" class="enquiry__text"></textarea>
+                    <textarea name="message" id="message" cols="10" rows="7" class="enquiry__text"></textarea>
                 </div>
                 <button type="submit" value="Send" class="enquiry__submit"><span
                         class="enquiry__span">Submit</span></button>
@@ -178,9 +181,6 @@
         </div>
     </section>
     <footer class="footer">
-        <small class="copyright">
-            Copyright &copy 2020 All rights reserved
-        </small>
         <div class="footer__social">
             <p class="footer__follow">Follow us!</p>
             <ul class="footer__social-ul">
@@ -191,6 +191,9 @@
                 <li class="footer__social-li"><a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
             </ul>
         </div>
+        <small class="copyright">
+            Copyright &copy 2020 All rights reserved
+        </small>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>

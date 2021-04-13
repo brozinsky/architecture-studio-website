@@ -69,15 +69,9 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-
         position: relative;
-        // margin: 0 auto 12vh auto;
         width: 100vw;
         min-height: 90vh;
-
-        @include mq(small) {
-            grid-template-columns: 50% 50%;
-        }
 
         @include mq(medium) {
             display: grid;
@@ -154,21 +148,16 @@ body {
         grid-row-start: 1;
         margin: 2rem auto;
         text-align: center;
-        font-size: 4rem;
+        font-size: 3.6rem;
         line-height: 5.5rem;
         text-transform: uppercase;
         font-style: normal;
         width: 359px;
         letter-spacing: 4px;
 
-        @include mq(small) {
-            margin: 28rem 6rem;
-        }
-
         @include mq(medium) {
             margin: auto 6rem;
             font-size: 5rem;
-            // padding-right: 15rem;
         }
         @include mq(large) {
             border-top: solid 1px #fff;
@@ -188,15 +177,10 @@ body {
         grid-row-start: 2;
         margin: 2rem auto;
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.8rem;
         line-height: 4rem;
         width: 30rem;
         letter-spacing: 0.2rem;
-
-        @include mq(small) {
-            margin: 20rem 6rem;
-            padding-right: 15rem;
-        }
 
         @include mq(medium) {
             margin: auto 6rem;
@@ -233,15 +217,12 @@ body {
     }
 
     &__button {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 4;
         padding: 1rem;
-        margin: 5rem auto;
+        margin: 2rem auto;
         color: #fff;
         background: $main-color;
         border: 2px solid #FFFFFF;
-        height: 4rem;
+        height: 3rem;
         width: 70vw;
         z-index: 3;
         transform: skew(20deg);
@@ -250,32 +231,25 @@ body {
         outline-color: rgba(255, 255, 255, .5);
         outline-offset: -2px;
         transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-        justify-self: end;
-
-        @include mq(small) {
-            margin: 5rem auto;
-            line-height: 3.6rem;
-            width: 14rem;
-        }
 
         @include mq(medium) {
-            grid-row-start: 3;
             width: 16rem;
             line-height: 4rem;
             height: 4rem;
+            grid-row-start: 3;
+            grid-column-start: 1;
         }
 
         @include mq(large) {
-            width: 26rem;
-            line-height: 5rem;
-            height: 5rem;
+            grid-row-start: 3;
+            grid-column-start: 1;
+            width: 25rem;
         }
 
         @include mq(xlarge) {
             width: 32rem;
             line-height: 6rem;
             height: 6rem;
-            margin: auto 12rem;
         }
 
         & a{
@@ -307,25 +281,26 @@ body {
     }
 
     &__logo {
-        height: 10rem;
-        margin: 3rem;
+        height: 5rem;
+        margin: 2rem;
         border: 1px #fff dashed;
-        padding: 2rem 3rem 0 4rem;
+        padding: 1rem 2rem 0 3rem;
         border-radius: 0 0 8rem 0;
         align-self: start;
 
         @include mq(small) {
-            border-radius: 0 0 0 8rem;
-            position: absolute;
-            top: 2rem;
-            left: 2rem;
-            height: 13rem;
+            padding: 2rem 3rem 0 4rem;
+            height: 10rem;
         }
 
         @include mq(medium) {
+            border-radius: 0 0 0 8rem;
             grid-column-start: 2;
             right: 2rem;
             height: 12rem;
+            position: absolute;
+            top: 0;
+            right: 0;
         }
         @include mq(large) {
             height: 16rem;
@@ -338,16 +313,16 @@ body {
         grid-row-start: 3;
         grid-row-end: 4;
         margin: 2rem auto;
-        width: 35rem;
+        width: 60vw;
 
         @include mq(small) {
             display: inline;
-            grid-row-start: 2;
-            width: 35rem;
-            grid-column-start: 2;
+            width: 50vw;
         }
 
         @include mq(medium) {
+            grid-column-start: 2;
+            grid-row-start: 2;
             width: 35rem;
         }
 
@@ -372,5 +347,10 @@ body {
 
     @include mq(small) {
         bottom: 0;
+    }
+
+    &__area{
+        height: 10rem;
+        width: 100vw;
     }
 }
