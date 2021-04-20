@@ -68,6 +68,9 @@
 
         &--open {
             left: 50%;
+            @include mq(medium) {
+                left: 0;
+            }
         }
 
         &--transparent {

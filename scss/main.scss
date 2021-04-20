@@ -9,6 +9,7 @@
         sans-serif;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -26,7 +27,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 100%
+    max-width: 100%;
 }
 
 @import 'typography';

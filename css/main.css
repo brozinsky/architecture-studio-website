@@ -4,6 +4,7 @@
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -875,6 +876,12 @@ body {
 
 .menu__bcg--open {
   left: 50%;
+}
+
+@media (min-width: 768px) {
+  .menu__bcg--open {
+    left: 0;
+  }
 }
 
 .menu__bcg--transparent {
